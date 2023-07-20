@@ -1,5 +1,9 @@
 package com.webservice.studentapi.services;
 
-public interface StudentService {
+import com.webservice.studentapi.beans.StudentBean;
 
+public interface StudentService {
+    StudentBean create(StudentBean studentBean);
+    boolean update(StudentBean studentBean);
+    boolean delete(StudentBean studentBean);
 }

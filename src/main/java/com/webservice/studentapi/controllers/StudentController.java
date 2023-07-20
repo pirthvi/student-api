@@ -1,17 +1,21 @@
 package com.webservice.studentapi.controllers;
 
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.webservice.studentapi.beans.StudentBean;
+import com.webservice.studentapi.services.StudentService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value="/student")
 public class StudentController {
-    @GetMapping(value="/get")
-    public String getApi(){
-        return "Hello";
+    @Autowired
+    StudentService studentService;
+    @PostMapping(value="/create")
+    public StudentBean create(@RequestBody StudentBean student)
+    {
+       return  studentService.create(student);
     }
+
 
 }

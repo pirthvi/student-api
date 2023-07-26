@@ -1,49 +1,36 @@
-package com.webservice.studentapi.models;
-
-import jakarta.persistence.*;
+package com.webservice.studentapi.dtos;
 
 
-import java.util.Date;
-@Entity
-@Table(name="student")
-public class StudentModel {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-    @Column
-    private String name;
-    @Column
-    private Date dateOfBirth;
-    @Column
+
+public class StudentDTO {
+    int id;
+    String name;
+
+
+    private String dateOfBirth;
+
     private String address;
-    @Column
+
     private String fatherName;
-    @Column
+
     private String contactNumber;
-    @Column
+
     private String gender;
-    @Column
+
     private String motherName;
-    @Column
+
     private String studyYear;
-    @Column
     private String province;
-    @Column
+
     private String country;
-    @Column
+
     private String religion;
 
-    @ManyToOne
-    @JoinColumn(name="departmentId")
-    private DepartmentModel department;
-
-    @ManyToOne
-    @JoinColumn(name = "courseId")
-    private CourseModel course;
+    private int departmentId;
+    private int courseId;
 
 
     public int getId() {
-
         return id;
     }
 
@@ -59,11 +46,11 @@ public class StudentModel {
         this.name = name;
     }
 
-    public Date getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -139,19 +126,19 @@ public class StudentModel {
         this.religion = religion;
     }
 
-    public DepartmentModel getDepartment() {
-        return department;
+    public int getDepartmentId() {
+        return departmentId;
     }
 
-    public void setDepartment(DepartmentModel department) {
-        this.department = department;
+    public void setDepartmentId(int departmentId) {
+        this.departmentId = departmentId;
     }
 
-    public CourseModel getCourse() {
-        return course;
+    public int getCourseId() {
+        return courseId;
     }
 
-    public void setCourse(CourseModel course) {
-        this.course = course;
+    public void setCourseId(int courseId) {
+        this.courseId = courseId;
     }
 }

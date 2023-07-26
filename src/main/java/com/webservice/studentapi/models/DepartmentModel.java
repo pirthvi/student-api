@@ -19,9 +19,9 @@ public class DepartmentModel {
     private String country;
     @Column
     private long numberOfStudents;
-//    @Column
-//    @OneToMany
-//    List<StudentModel> students;
+    @Column
+    @OneToMany
+    List<StudentModel> students;
 //    @Column
 //    @OneToMany
 //    List<CourseModel> courses;
@@ -75,13 +75,13 @@ public class DepartmentModel {
         this.numberOfStudents = numberOfStudents;
     }
 
-//    public List<StudentModel> getStudents() {
-//        return students;
-//    }
-//
-//    public void setStudents(List<StudentModel> students) {
-//        this.students = students;
-//    }
+    public List<StudentModel> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<StudentModel> students) {
+        this.students = students;
+    }
 
 //    public List<CourseModel> getCourses() {
 //        return courses;

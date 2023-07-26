@@ -12,6 +12,7 @@ public class CourseModel {
     String name;
 //    @Column
 //    @ManyToOne
+//
 //    DepartmentModel department;
 
 
@@ -31,5 +32,11 @@ public class CourseModel {
         this.name = name;
     }
 
-
+//    public DepartmentModel getDepartment() {
+//        return department;
+//    }
+//
+//    public void setDepartment(DepartmentModel department) {
+//        this.department = department;
+//    }
 }
